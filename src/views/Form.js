@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {navigate} from "@reach/router"
 import axios from "axios";
 
+import Products from './Products';
 
 const Form = (props) => {
     const [title, setTitle] = useState("");
@@ -9,7 +10,6 @@ const Form = (props) => {
     const [description, setDescrition] = useState("");
 
     const createProduct = e => {
-        e.preventDefault();
         const newProduct = {
             title : title,
             price : price,
@@ -38,6 +38,7 @@ const Form = (props) => {
             <input type="text" onChange={(e) => {setDescrition(e.target.value)}} />
             <button>Submit</button>
         </form>
+        <Products></Products>
         </div>
 }
 
