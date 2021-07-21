@@ -10,6 +10,7 @@ const Form = (props) => {
     const [description, setDescrition] = useState("");
 
     const createProduct = e => {
+        e.preventDefault();
         const newProduct = {
             title : title,
             price : price,
@@ -18,7 +19,6 @@ const Form = (props) => {
         axios.post("http://localhost:5000/api/products/new", newProduct)
         .then((res)=>{
             console.log(res);
-            navigate("/")
         })
         .catch((err) => {
             console.log(err);
